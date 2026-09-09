@@ -3,8 +3,6 @@
 A complete geomantic shield chart, cast by hand and interpreted. Vanilla
 JavaScript, no framework, no build step. German and English.
 
-![The shield chart with the Judge's verdict](docs/screenshot-reading.png)
-
 ## What it does
 
 Geomancy reached Europe in the twelfth century as ʿilm al-raml, the *science of
@@ -37,8 +35,7 @@ sit as Judge: Via, Populus, Coniunctio, Carcer, both Fortunae, Acquisitio and
 Amissio. The traditional instruction is to discard any chart whose Judge falls
 outside that set — a medieval checksum.
 
-`assertValid()` enforces it on every chart, and the test suite verifies it over
-two thousand random castings.
+`assertValid()` enforces it on every chart.
 
 ## Running it
 
@@ -52,16 +49,6 @@ python3 -m http.server 8000
 
 Deployed as-is on GitHub Pages — there is nothing to build.
 
-## Tests
-
-```sh
-node --test test/geomancy.test.mjs   # chart derivation, 16 cases
-node test/walkthrough.mjs            # end-to-end in Chromium, needs playwright
-```
-
-The logic modules import nothing from the DOM, which is what makes the
-derivation testable in Node without a browser.
-
 ## Layout
 
 ```
@@ -73,9 +60,6 @@ js/
   i18n.js       interface strings and the active-language store
   render.js     DOM construction; holds no state
   main.js       application flow: ask → cast → read
-test/
-  geomancy.test.mjs
-  walkthrough.mjs
 ```
 
 ## Sources
@@ -84,7 +68,3 @@ Planetary, elemental and zodiacal attributions follow Heinrich Cornelius
 Agrippa, *De Occulta Philosophia* (Book II), as reproduced in Stephen Skinner,
 *Geomancy in Theory and Practice*. The interpretations are condensed from the
 same tradition.
-
-## Licence
-
-GPL-3.0
